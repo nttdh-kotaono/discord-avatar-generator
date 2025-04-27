@@ -76,3 +76,47 @@ body {
     color: #555;
     margin-top: 1rem;
   }
+  
+  .color-picker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* カラーピッカー間のスペース */
+    margin-bottom: 20px;
+}
+
+.color-picker-container label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    gap: 5px; /* ラベルとカラーピッカーの間のスペース */
+}
+input[type="color"] {
+  width: 50px;
+  height: 50px;
+  border: 0.5px solid #000; /* 黒い枠線を追加 */
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  appearance: none; /* デフォルトスタイルをリセット */
+  -webkit-appearance: none; /* Safari用 */
+  background-color: transparent; /* 背景を透明に */
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none; /* デフォルトの枠を削除 */
+  border-radius: 50%; /* 色のプレビュー部分を丸くする */
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0; /* 余白を削除 */
+  border-radius: 50%; /* ラッパーも丸くする */
+}
+
+input[type="color"]:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}

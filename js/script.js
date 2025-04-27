@@ -1,17 +1,29 @@
-const colorPicker = document.getElementById("color-picker");
+const bg_colorPicker = document.getElementById("bg-color-picker");
+const icon_colorPicker = document.getElementById("icon-color-picker");
 const discordIcon = document.getElementById("discord-icon");
 const downloadBtn = document.getElementById("download-btn");
 
-// リアルタイムで色変更
-colorPicker.addEventListener("input", function (event) {
+// リアルタイムで背景色変更
+bg_colorPicker.addEventListener("input", function (event) {
   const color = event.target.value;
-  changeSVGColor(color);
+  changeSVGColor("background", color);
+});
+
+// リアルタイムでアイコン色変更
+icon_colorPicker.addEventListener("input", function (event) {
+  const color = event.target.value;
+  changeSVGColor("icon", color);
 });
 
 // SVGの色を変更する関数
-function changeSVGColor(color) {
-  const bluePath = discordIcon.querySelectorAll("path")[0];
-  bluePath.setAttribute("fill", color);
+function changeSVGColor(target, color) {
+  if (target === "background") {
+    const bgPath = discordIcon.querySelectorAll("path")[0];
+    bgPath.setAttribute("fill", color);
+  } else if (target === "icon") {
+    const iconPath = discordIcon.querySelectorAll("path")[1];
+    iconPath.setAttribute("fill", color);
+  }
 }
 
 // ダウンロードボタンのイベント

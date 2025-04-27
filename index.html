@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Discordのアイコンカラーを選択</h1>
+      <h1>Discordアイコンカラー</h1>
 
       <div id="svg-container">
         <svg
@@ -27,11 +27,16 @@
         </svg>
       </div>
 
-      <label for="color-picker">アイコンの色を選んでください：</label>
-      <input type="color" id="color-picker" value="#5865f2" />
+      <div class="color-picker-container">
+        <label for="icon-color-picker">アイコンの色:</label>
+        <input type="color" id="icon-color-picker" value="#ffffff" />
+
+        <label for="bg-color-picker">背景の色:</label>
+        <input type="color" id="bg-color-picker" value="#5865f2" />
+      </div>
 
       <p>変更後のアイコンをダウンロードできます。</p>
-      <button id="download-btn">アイコンをダウンロード</button>
+      <button id="download-btn">ダウンロード</button>
     </div>
 
     <script src="js/script.js"></script>
